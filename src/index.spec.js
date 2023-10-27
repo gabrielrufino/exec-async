@@ -1,12 +1,7 @@
-import { faker } from '@faker-js/faker';
+const execAsync = require('.');
 
-import { identity } from '.';
-
-describe('identity', () => {
-  it('Should return the input', () => {
-    const input = faker.number.int();
-    const output = identity(input);
-
-    expect(output).toBe(input);
+describe('execAsync', () => {
+  it('Should execute a command asynchronously', async () => {
+    await execAsync('node -e "console.log(\'Hello, world!\')"');
   });
 });
